@@ -33,8 +33,8 @@ async function main() {
     const hash = result.IpfsHash;
     console.log("IPFS Hash:", hash);
 
-    const tx = await contract.mintTo("0x0E622ab189C996D3AE3C8a5A0023CdE9A9F0c8A1", 1, `https://ipfs.io/ipfs/${hash}`, 1);
-    tx.wait();
+    const tx = await contract.mintTo("0x0E622ab189C996D3AE3C8a5A0023CdE9A9F0c8A1", 0, `https://ipfs.io/ipfs/${hash}`, 1);
+    await tx.wait();
 
     console.log("Transaction Hash:", tx.hash);
   } catch (error) {
